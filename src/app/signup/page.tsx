@@ -23,17 +23,7 @@ export default function Signup() {
   return (
     <div className="w-full h-screen bg-white flex">
       {/* Left Side */}
-      <div className="flex-1 bg-[#F4F8F5] flex items-center justify-center px-10">
-        <div className="max-w-md">
-          <h1 className="text-3xl font-semibold text-[#0A4312] leading-snug">
-            Learning a new skill has never been better and easier, Thanks to
-            Gritly resources
-          </h1>
-        </div>
-      </div>
-
-      {/* Right Side */}
-      <div className="flex-1 flex items-center justify-center">
+          <div className="flex-1 flex items-center justify-center">
         <div className="w-full max-w-md">
           <h2 className="text-4xl font-bold text-black mb-2">
             Create your account
@@ -108,6 +98,15 @@ export default function Signup() {
               Sign in
             </a>
           </p>
+        </div>
+      </div>
+      {/* Right Side */}
+<div className="flex-1 bg-[#F4F8F5] flex items-center justify-center px-10">
+        <div className="max-w-md">
+          <h1 className="text-3xl font-semibold text-[#0A4312] leading-snug">
+            Learning a new skill has never been better and easier, Thanks to
+            Gritly resources
+          </h1>
         </div>
       </div>
     </div>
