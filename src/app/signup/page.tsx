@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function Signup() {
   const [formData, setFormData] = useState({
+    name: "",
     email: "",
     password: "",
   });
@@ -33,6 +34,24 @@ export default function Signup() {
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-6">
+
+<div>
+    <label
+        htmlFor="name"
+        className="block text-base font-medium text-gray-700 mb-2"
+    >
+        Name
+    </label>
+    <input
+        type="text"
+        id="name"
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
+        className="w-full h-12 px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600"
+        required
+    />
+</div>
             {/* Email */}
             <div>
               <label
