@@ -24,156 +24,118 @@ export default function Login() {
     };
 
     return (
-        <div className="w-full h-screen bg-white relative">
-            {/* Left Side - Form */}
-            <div className="absolute left-[84px] top-[190px] w-[563px] h-[307px]">
-                {/* Header Section */}
-                <div className="mb-[13px]">
-                    <div className="mb-[6px]">
-                        <h1 className="text-[36px] font-semibold leading-[44px] text-black font-['Montserrat'] mb-[18px]">
-                            Login
+        <div className="relative w-[1440px] h-[1024px] bg-white rounded-[4px] mx-auto">
+            {/* Centered Login Form */}
+            <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-full max-w-md space-y-8 p-8">
+                    {/* Header */}
+                    <div className="text-center">
+                        <h1 className="text-4xl font-bold text-gray-900 mb-2">
+                            Welcome Back
                         </h1>
-                        <h2 className="text-[32px] font-normal leading-[39px] text-black font-['Montserrat']">
-                            Welcome back
-                        </h2>
+                        <p className="text-gray-600">
+                            Sign in to your account
+                        </p>
                     </div>
 
-                    <div className="w-[563px] h-[64px] flex items-center justify-center">
-                        <p className="text-[18px] font-normal leading-[22px] text-[#7B817C] font-['Montserrat'] text-center">
-                            Log in with your credentials to get instant access to our large book collection.
+                    {/* Form */}
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                        {/* Email Field */}
+                        <div>
+                            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                                Email Address
+                            </label>
+                            <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                required
+                                value={formData.email}
+                                onChange={handleChange}
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                                placeholder="Enter your email"
+                            />
+                        </div>
+
+                        {/* Password Field */}
+                        <div>
+                            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                                Password
+                            </label>
+                            <div className="relative">
+                                <input
+                                    id="password"
+                                    name="password"
+                                    type="password"
+                                    required
+                                    value={formData.password}
+                                    onChange={handleChange}
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 pr-12"
+                                    placeholder="Enter your password"
+                                />
+                                {/* Eye Icon */}
+                                <button
+                                    type="button"
+                                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                                    aria-label="Toggle password visibility"
+                                >
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Remember Me & Forgot Password */}
+                        <div className="flex items-center justify-between">
+                            <div className="flex items-center">
+                                <input
+                                    id="rememberMe"
+                                    name="rememberMe"
+                                    type="checkbox"
+                                    checked={formData.rememberMe}
+                                    onChange={handleChange}
+                                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                                />
+                                <label htmlFor="rememberMe" className="ml-2 block text-sm text-gray-700">
+                                    Remember me
+                                </label>
+                            </div>
+                            <a href="#" className="text-sm text-blue-600 hover:text-blue-500">
+                                Forgot password?
+                            </a>
+                        </div>
+
+                        {/* Submit Button */}
+                        <button
+                            type="submit"
+                            className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200"
+                        >
+                            Sign In
+                        </button>
+                    </form>
+
+                    {/* Sign Up Link */}
+                    <div className="text-center">
+                        <p className="text-sm text-gray-600">
+                            Don't have an account?{' '}
+                            <a href="/signup" className="font-medium text-blue-600 hover:text-blue-500">
+                                Sign up
+                            </a>
                         </p>
                     </div>
                 </div>
-
-                {/* Form */}
-                <form onSubmit={handleSubmit} className="w-[531px] space-y-[15px]">
-                    {/* Email Field */}
-                    <div className="space-y-[16px]">
-                        <label className="block text-[18px] font-medium leading-[22px] text-black font-['Inter']">
-                            Email address
-                        </label>
-                        <input
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            placeholder="Enter your email address"
-                            className="w-full h-[48px] border border-[#C3C1C1] rounded-[8px] px-[27px] py-[13px] text-[16px] font-normal leading-[19px] text-[#B4B2B2] font-['Inter'] focus:outline-none focus:border-[#0A4312] focus:text-black"
-                            required
-                        />
-                    </div>
-
-                    {/* Password Field */}
-                    <div className="space-y-[16px] relative">
-                        <label className="block text-[18px] font-medium leading-[22px] text-black font-['Inter'] opacity-80">
-                            Password
-                        </label>
-                        <input
-                            type="password"
-                            name="password"
-                            value={formData.password}
-                            onChange={handleChange}
-                            placeholder="Enter your password"
-                            className="w-full h-[48px] border border-[#C3C1C1] rounded-[8px] px-[25px] py-[14px] text-[16px] font-normal leading-[19px] text-[#B4B2B2] font-['Inter'] focus:outline-none focus:border-[#0A4312] focus:text-black opacity-80"
-                            required
-                        />
-                        {/* Eye Icon */}
-                        <div className="absolute right-[15px] top-[38px] w-[25px] h-[25px] flex items-center justify-center cursor-pointer">
-                            <svg className="w-[12.5px] h-[12.5px]" viewBox="0 0 20 20" fill="none">
-                                <path d="M1 10C1 10 4 4 10 4C16 4 19 10 19 10C19 10 16 16 10 16C4 16 1 10 1 10Z" stroke="#222222" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                <circle cx="10" cy="10" r="3" stroke="#222222" strokeWidth="1.5" />
-                            </svg>
-                        </div>
-                    </div>
-                </form>
-
-                {/* Remember Me and Forgot Password */}
-                <div className="absolute left-[95px] top-[585px] w-[541px] h-[102px]">
-                    <div className="w-[531px] h-[48px] mb-[24px]">
-                        <button
-                            type="submit"
-                            onClick={handleSubmit}
-                            className="w-full h-full bg-[#0A4312] bg-opacity-80 rounded-[8px] text-white text-[16px] font-semibold leading-[19px] font-['Inter'] hover:bg-opacity-100 transition-all duration-200"
-                        >
-                            Sign in
-                        </button>
-                    </div>
-
-                    <div className="w-[541px] h-[39px] flex justify-between items-center">
-                        <div className="flex items-center gap-[9px]">
-                            <input
-                                id="rememberMe"
-                                name="rememberMe"
-                                type="checkbox"
-                                checked={formData.rememberMe}
-                                onChange={handleChange}
-                                className="w-[24px] h-[24px] border border-[#C3C1C1] rounded-[8px] bg-white"
-                            />
-                            <label htmlFor="rememberMe" className="text-[16px] font-normal leading-[19px] text-[#5C5B5B] font-['Inter']">
-                                Remember password
-                            </label>
-                        </div>
-
-                        <a href="#" className="text-[16px] font-normal leading-[19px] text-[#05397D] font-['Inter'] underline">
-                            Forgot password
-                        </a>
-                    </div>
-                </div>
-
-                {/* Sign Up Link */}
-                <div className="absolute left-[185px] top-[847px] flex items-center gap-[4px]">
-                    <span className="text-[16px] font-normal leading-[19px] text-black font-['Inter']">
-                        Don't have an account?
-                    </span>
-                    <a href="/signup" className="text-[16px] font-medium leading-[19px] text-[#0A4312] font-['Inter'] underline">
-                        Sign up
-                    </a>
-                </div>
             </div>
 
-            {/* Right Side - Background */}
-            <div className="absolute left-[588px] top-0 w-[852px] h-full bg-[#0A4312] relative overflow-hidden">
-                {/* Background Image Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-green-800 to-green-900 opacity-20"></div>
-
-                {/* Logo */}
-                <div className="absolute left-[100px] top-[57px] w-[212px] h-[16px] bg-gradient-to-r from-white to-gray-200 rounded"></div>
-
-                {/* Main Content */}
-                <div className="absolute left-[896px] top-[252px] w-[392px] h-[366px] flex flex-col items-center">
-                    {/* Continue Learning Text */}
-                    <div className="w-[392px] h-[196px] flex items-center justify-center mb-[24px]">
-                        <h1 className="text-[72px] font-extrabold leading-[88px] tracking-[0.04em] text-[#0A4312] font-['Montserrat'] text-center">
-                            Continue<br />Learning
-                        </h1>
-                    </div>
-
-                    {/* Learning Icons */}
-                    <div className="w-[356px] h-[170px] space-y-[24px]">
-                        {/* SoloLearn Icon */}
-                        <div className="w-full h-[73px] bg-[rgba(139,173,144,0.25)] rounded-[24px] flex items-center justify-center relative">
-                            <div className="w-[55px] h-[55px] bg-[#0A4312] rounded-full flex items-center justify-center">
-                                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 10-.788-1.84L7.667 9.088l1.94.831a1 1 0 001.07-.04l4-2a1 1 0 10-.788-1.84L10.667 9.088l1.94.831a1 1 0 001.07-.04l4-2a1 1 0 10-.788-1.84l-7-3z" />
-                                </svg>
-                            </div>
-                        </div>
-
-                        {/* Learning Icon */}
-                        <div className="w-full h-[73px] bg-[rgba(139,173,144,0.25)] rounded-[24px] flex items-center justify-center relative">
-                            <div className="w-[65px] h-[65px] relative">
-                                <svg className="w-full h-full text-[#0A4312]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Bottom Text */}
-                <div className="absolute left-[calc(50%-238px/2+50px)] top-[919px] w-[238px] h-[101px] flex items-center justify-center">
-                    <p className="text-[32px] font-semibold leading-[39px] text-[#0A4312] font-['Inter'] text-center">
-                        Your Journey begins here
+            {/* Bottom Frame */}
+            <div className="absolute w-[238px] h-[101px] top-[919px] left-[651px] p-[10px] gap-[10px] bg-[#0A4312] rounded-lg flex items-center justify-center">
+                <div className="w-[218px] h-[81px] text-center">
+                    <p className="text-[32px] font-semibold leading-[100%] text-white font-['Inter']">
+                        Your Journey<br />
+                        <span className="font-['Lucida Calligraphy'] italic font-normal">
+                            begins here
+                        </span>
                     </p>
                 </div>
             </div>
