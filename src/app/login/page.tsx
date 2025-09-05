@@ -146,9 +146,6 @@ export default function Login() {
                     <h2 className="text-2xl font-bold text-gray-800 mb-4">
                         Continue Learning
                     </h2>
-                    <p className="text-gray-600 max-w-sm">
-                        Access your personalized learning journey and unlock new skills with Gritly.
-                    </p>
                 </div>
 
                 {/* Bottom Frame */}
