@@ -34,7 +34,7 @@ export default function Login() {
                             Welcome Back
                         </h1>
                         <p className="text-gray-600">
-                            Sign in to your account
+                            Login with your credentials to get instant access to our large book collection.
                         </p>
                     </div>
 
