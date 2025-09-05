@@ -34,7 +34,7 @@ export default function Signup() {
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-6">
-
+{/* Name */}
 <div>
     <label
         htmlFor="name"
