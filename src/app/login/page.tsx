@@ -24,10 +24,10 @@ export default function Login() {
     };
 
     return (
-        <div className="relative w-[1440px] h-[1024px] bg-white rounded-[4px] mx-auto">
-            {/* Centered Login Form */}
-            <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-full max-w-md space-y-8 p-8">
+        <div className="relative w-[1440px] h-[1024px] bg-white rounded-[4px] mx-auto flex">
+            {/* Left Side - Login Form */}
+            <div className="w-1/2 h-full flex items-center justify-center p-8">
+                <div className="w-full max-w-md space-y-8">
                     {/* Header */}
                     <div className="text-center">
                         <h1 className="text-4xl font-bold text-gray-900 mb-2">
@@ -128,15 +128,33 @@ export default function Login() {
                 </div>
             </div>
 
-            {/* Bottom Frame */}
-            <div className="absolute w-[238px] h-[101px] top-[919px] left-[651px] p-[10px] gap-[10px] bg-[#0A4312] rounded-lg flex items-center justify-center">
-                <div className="w-[218px] h-[81px] text-center">
-                    <p className="text-[32px] font-semibold leading-[100%] text-white font-['Inter']">
-                        Your Journey<br />
-                        <span className="font-['Lucida Calligraphy'] italic font-normal">
-                            begins here
-                        </span>
+            {/* Right Side - Background/Content */}
+            <div className="w-1/2 h-full bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center relative">
+                {/* Background Pattern/Content */}
+                <div className="text-center">
+                    <div className="w-32 h-32 bg-blue-100 rounded-full flex items-center justify-center mb-8 mx-auto">
+                        <svg className="w-16 h-16 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                    <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                        Continue Learning
+                    </h2>
+                    <p className="text-gray-600 max-w-sm">
+                        Access your personalized learning journey and unlock new skills with Gritly.
                     </p>
+                </div>
+
+                {/* Bottom Frame */}
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-[238px] h-[101px] p-[10px] gap-[10px] bg-[#0A4312] rounded-lg flex items-center justify-center">
+                    <div className="w-[218px] h-[81px] text-center">
+                        <p className="text-[32px] font-semibold leading-[100%] text-white font-['Inter']">
+                            Your Journey<br />
+                            <span className="font-['Lucida Calligraphy'] italic font-normal">
+                                begins here
+                            </span>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
