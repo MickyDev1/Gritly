@@ -146,9 +146,9 @@ export default function Login() {
                 </div>
 
                 {/* Bottom Frame */}
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-[238px] h-[101px] p-[10px] gap-[10px] bg-[#0A4312] rounded-lg flex items-center justify-center">
+                <div className="absolute bottom-8 left-8 w-[238px] h-[101px] p-[10px] gap-[10px] bg-white flex items-center justify-center">
                     <div className="w-[218px] h-[81px] text-center">
-                        <p className="text-[32px] font-semibold leading-[100%] text-white font-['Inter']">
+                        <p className="text-[32px] font-semibold leading-[100%] text-[#0A4312] font-['Inter']">
                             Your Journey<br />
                             <span className="font-['Lucida Calligraphy'] italic font-normal">
                                 begins here
