@@ -138,9 +138,15 @@ export default function Login() {
                 }}>
                 {/* Background Pattern/Content */}
                 <div className="text-center">
-                    <h2 className="text-2xl font-bold text-gray-800 mb-4">
-                        Continue Learning
-                    </h2>
+                    {/* Continue Learning Frame */}
+                    <div className="w-[392px] h-[196px] p-[10px] gap-[10px] bg-[#0A4312] rounded-lg mx-auto mb-8 flex items-center justify-center">
+                        <div className="w-[372px] h-[176px] text-center">
+                            <h2 className="text-[72px] font-extrabold leading-[100%] tracking-[4%] text-white font-['Montserrat']">
+                                Continue<br />
+                                Learning
+                            </h2>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Bottom Frame */}
