@@ -129,7 +129,7 @@ export default function Login() {
             </div>
 
             {/* Right Side - Background/Content */}
-            <div className="w-1/2 h-full bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center relative">
+            <div className="absolute w-[852px] h-[1024px] left-[588px] top-0 bg-[#0A4312] flex items-center justify-center relative">
                 {/* Background Pattern/Content */}
                 <div className="text-center">
                     <div className="w-32 h-32 bg-blue-100 rounded-full flex items-center justify-center mb-8 mx-auto">
