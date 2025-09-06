@@ -28,7 +28,7 @@ export default function Signup() {
             <div className="flex-1 flex items-center justify-center">
                 <div className="mb-10">
                     <Image
-                        src="/gritly.png" // <- make sure the filename matches what’s in /public
+                        src="/gritly.png"
                         alt="Gritly Logo"
                         width={150}
                         height={40}
