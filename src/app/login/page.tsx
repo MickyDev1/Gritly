@@ -3,135 +3,164 @@
 import { useState } from 'react';
 
 export default function Login() {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-    rememberMe: false,
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === 'checkbox' ? checked : value,
+    const [formData, setFormData] = useState({
+        email: '',
+        password: '',
+        rememberMe: false
     });
-  };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Login data:', formData);
-  };
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value, type, checked } = e.target;
+        setFormData({
+            ...formData,
+            [name]: type === 'checkbox' ? checked : value
+        });
+    };
 
-  return (
-    <div className="relative w-full h-screen flex overflow-hidden">
-      {/* Left Side */}
-      <div className="relative w-1/2 h-full bg-white flex flex-col justify-center px-16 z-10">
-        {/* Logo */}
-        <div className="mb-12">
-          <h1 className="text-2xl font-extrabold text-[#0A4312] tracking-widest">GRITLY</h1>
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        // Handle login logic here
+        console.log('Login data:', formData);
+    };
+
+    return (
+        <div className="relative w-[1440px] h-[1024px] bg-white rounded-[4px] mx-auto flex">
+            {/* Left Side - Login Form */}
+            <div className="w-1/2 h-full flex items-center justify-center p-8">
+                <div className="w-full max-w-md space-y-8">
+                    {/* Header */}
+                    <div className="text-center">
+                        <h1 className="text-4xl font-bold text-gray-900 mb-2">
+                            Welcome Back
+                        </h1>
+                        <p className="text-gray-600">
+                            Login with your credentials to get instant access to our large book collection.
+                        </p>
+                    </div>
+
+                    {/* Form */}
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                        {/* Email Field */}
+                        <div>
+                            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                                Email Address
+                            </label>
+                            <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                required
+                                value={formData.email}
+                                onChange={handleChange}
+                                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                                placeholder="Enter your email"
+                            />
+                        </div>
+
+                        {/* Password Field */}
+                        <div>
+                            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+                                Password
+                            </label>
+                            <div className="relative">
+                                <input
+                                    id="password"
+                                    name="password"
+                                    type="password"
+                                    required
+                                    value={formData.password}
+                                    onChange={handleChange}
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 pr-12"
+                                    placeholder="Enter your password"
+                                />
+                                {/* Eye Icon */}
+                                <button
+                                    type="button"
+                                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                                    aria-label="Toggle password visibility"
+                                >
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Remember Me & Forgot Password */}
+                        <div className="flex items-center justify-between">
+                            <div className="flex items-center">
+                                <input
+                                    id="rememberMe"
+                                    name="rememberMe"
+                                    type="checkbox"
+                                    checked={formData.rememberMe}
+                                    onChange={handleChange}
+                                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                                />
+                                <label htmlFor="rememberMe" className="ml-2 block text-sm text-gray-700">
+                                    Remember me
+                                </label>
+                            </div>
+                            <a href="#" className="text-sm text-blue-600 hover:text-blue-500">
+                                Forgot password?
+                            </a>
+                        </div>
+
+                        {/* Submit Button */}
+                        <button
+                            type="submit"
+                            className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200"
+                        >
+                            Sign In
+                        </button>
+                    </form>
+
+                    {/* Sign Up Link */}
+                    <div className="text-center">
+                        <p className="text-sm text-gray-600">
+                            Don't have an account?{' '}
+                            <a href="/signup" className="font-medium text-blue-600 hover:text-blue-500">
+                                Sign up
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {/* Right Side - Background/Content */}
+            <div className="absolute w-[852px] h-[1024px] left-[588px] top-0 bg-[#0A4312]"
+                style={{
+                    backgroundImage: 'url("/loginbackground.jpg")',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat'
+                }}>
+                {/* Background Pattern/Content */}
+                <div className="text-center">
+                    {/* Continue Learning Frame */}
+                    <div className="w-[392px] h-[196px] p-[10px] gap-[10px] bg-[#0A4312] rounded-lg mx-auto mb-8 flex items-center justify-center">
+                        <div className="w-[372px] h-[176px] text-center">
+                            <h2 className="text-[72px] font-extrabold leading-[100%] tracking-[4%] text-white font-['Montserrat']">
+                                Continue<br />
+                                Learning
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Bottom Frame */}
+                <div className="absolute bottom-8 left-8 w-[238px] h-[101px] p-[10px] gap-[10px] bg-white flex items-center justify-center">
+                    <div className="w-[218px] h-[81px] text-center">
+                        <p className="text-[32px] font-semibold leading-[100%] text-[#0A4312] font-['Inter']">
+                            Your Journey<br />
+                            <span className="font-['Lucida Calligraphy'] italic font-normal">
+                                begins here
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        {/* Text */}
-        <div className="mb-10">
-          <h2 className="text-3xl font-bold text-black mb-2">Login</h2>
-          <h3 className="text-xl text-black mb-2">Welcome back</h3>
-          <p className="text-gray-600">
-            Log in with your credentials to get instant access to our large book collection.
-          </p>
-        </div>
-
-        {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-6 max-w-md">
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-              Email address
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#0A4312] focus:border-[#0A4312] outline-none"
-              placeholder="Enter your email address"
-            />
-          </div>
-
-          <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
-              Password
-            </label>
-            <input
-              id="password"
-              name="password"
-              type="password"
-              required
-              value={formData.password}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#0A4312] focus:border-[#0A4312] outline-none"
-              placeholder="Enter your password"
-            />
-          </div>
-
-          <div className="flex items-center justify-between">
-            <label className="flex items-center">
-              <input
-                id="rememberMe"
-                name="rememberMe"
-                type="checkbox"
-                checked={formData.rememberMe}
-                onChange={handleChange}
-                className="h-4 w-4 text-[#0A4312] focus:ring-[#0A4312] border-gray-300 rounded"
-              />
-              <span className="ml-2 text-sm text-gray-700">Remember password</span>
-            </label>
-            <a href="#" className="text-sm text-[#0A4312] hover:underline">
-              Forgot password
-            </a>
-          </div>
-
-          <button
-            type="submit"
-            className="w-full py-3 bg-[#0A4312] text-white rounded-md font-medium hover:bg-green-900 transition"
-          >
-            Sign in
-          </button>
-        </form>
-
-        {/* Sign up link */}
-        <p className="text-sm text-gray-700 mt-10">
-          Don’t have an account?{' '}
-          <a href="/signup" className="text-[#0A4312] font-medium hover:underline">
-            Sign up
-          </a>
-        </p>
-      </div>
-
-      {/* Right Side */}
-      <div
-        className="w-1/2 h-full relative flex flex-col justify-center items-center"
-        style={{
-          backgroundImage: 'url("/loginbackground.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        {/* Continue Learning box */}
-        <div className="bg-white/70 rounded-lg px-10 py-6 mb-12 text-center">
-          <h2 className="text-5xl font-extrabold text-[#0A4312] leading-tight">
-            Continue <br /> Learning
-          </h2>
-        </div>
-
-        {/* Bottom text */}
-        <div className="absolute bottom-10 left-10">
-          <p className="text-2xl text-[#0A4312] font-semibold">
-            Your Journey <br />
-            <span className="italic font-normal">begins here</span>
-          </p>
-        </div>
-      </div>
-    </div>
-  );
+    );
 }
