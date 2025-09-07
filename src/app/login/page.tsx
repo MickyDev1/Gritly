@@ -135,4 +135,3 @@ export default function Login() {
     </div>
   );
 }
-import Image from "next/image";
