@@ -117,7 +117,7 @@ export default function Login() {
                     backgroundPosition: "center",
                 }}
             >
-                <div className="bg-white px-10 py-6 justify-center">
+                <div className="justify-center">
 
                     <Image
                         src="/frame.png"
