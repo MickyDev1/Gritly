@@ -124,10 +124,6 @@ export default function Login() {
                         alt="Typing illustration"
                         width={392}
                         height={366}
-                        angle={0}
-                        opacity={1}
-                        top={252}
-                        left={896}
                         className="object-contain"
                     />
                 </div>
