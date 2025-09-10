@@ -143,7 +143,7 @@ export default function Signup() {
           Gritly resources
         </h1>
         <Image
-          src="/signuppage.png" // <- your illustration file in public folder
+          src="/signuppage.png"
           alt="Typing illustration"
           width={450}
           height={450}
