@@ -127,8 +127,8 @@ export default function Login() {
                 {/* Bottom text */}
                 <div className="absolute bottom-10 left-10">
                     <p className="text-2xl text-[#0A4312] font-semibold">
-                        Your <br />
-                        <span className="italic font-normal">Journey</span>
+                        Your <span className="italic font-normal">Journey</span><br />
+                        <span className="text-2xl text-[#0A4312] font-semibold">begins here</span>
                     </p>
                 </div>
             </div>
