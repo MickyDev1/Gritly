@@ -117,12 +117,12 @@ export default function Login() {
                     backgroundPosition: "center",
                 }}
             >
-                <div className="bg-white px-10 py-6 rounded-lg shadow-md text-center">
+                <div className="bg-white px-10 py-6 rounded-lg shadow-md justify-center">
                     <Image
                         src="/frame.png"
                         alt="Typing illustration"
-                        width={450}
-                        height={450}
+                        width={250}
+                        height={250}
                         className="object-contain"
                     />
                 </div>
