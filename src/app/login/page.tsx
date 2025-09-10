@@ -110,7 +110,10 @@ export default function Login() {
 
             {/* Right Side */}
             <div
-                className="w-1/2 h-full relative flex flex-col justify-center items-center"
+                className="w-1/2 h-full relative flex flex-col justify-center items-center bg-fixed bg-cover bg-center"
+                style={{
+                    backgroundImage: 'url("/loginbackground.jpg")',
+                }}
             >
                 <div className="justify-center">
 
