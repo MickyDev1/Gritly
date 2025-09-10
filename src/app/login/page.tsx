@@ -117,11 +117,14 @@ export default function Login() {
                     backgroundPosition: "center",
                 }}
             >
-                {/* Continue Learning box */}
                 <div className="bg-white px-10 py-6 rounded-lg shadow-md text-center">
-                    <h2 className="text-5xl font-extrabold text-[#0A4312] leading-tight">
-                        Continue <br /> Learning
-                    </h2>
+                    <Image
+                        src="/frame.png"
+                        alt="Typing illustration"
+                        width={450}
+                        height={450}
+                        className="object-contain"
+                    />
                 </div>
 
                 {/* Bottom text */}
