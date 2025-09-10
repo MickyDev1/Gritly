@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 
 export default function Login() {
@@ -25,10 +26,16 @@ export default function Login() {
   return (
     <div className="relative w-full h-screen flex overflow-hidden">
       {/* Left Side */}
-      <div className="relative w-1/2 h-full bg-white flex flex-col justify-center px-16 z-10">
+      <div className="flex-1 bg-white flex flex-col px-10 py-8">
         {/* Logo */}
-        <div className="mb-12">
-          <h1 className="text-2xl font-extrabold text-[#0A4312] tracking-widest">GRITLY</h1>
+       <div className="mb-10">
+          <Image
+            src="/gritly.png"
+            alt="Gritly Logo"
+            width={140}
+            height={40}
+            className="object-contain"
+          />
         </div>
 
         {/* Text */}
