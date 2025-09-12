@@ -24,113 +24,104 @@ export default function Login() {
     };
 
     return (
-        <div className="w-full h-screen flex">
+        <div className="relative w-full h-screen flex overflow-hidden">
             {/* Left Side */}
-            <div className="flex-1 bg-white flex flex-col justify-center px-16">
+            <div className="flex-1 bg-white flex flex-col justify-center px-16 relative z-10">
                 {/* Logo */}
-                <div className="mb-10">
+                <div className="absolute top-8 left-16">
                     <Image
                         src="/gritly.png"
                         alt="Gritly Logo"
-                        width={150}
+                        width={140}
                         height={40}
                         className="object-contain"
                     />
                 </div>
 
-                {/* Header */}
-                <h2 className="text-4xl font-bold text-black mb-2">Login</h2>
-                <h3 className="text-xl text-black font-medium mb-2">Welcome back</h3>
-                <p className="text-gray-600 mb-8">
-                    Log in with your credentials to get instant access to our large book
-                    collection.
-                </p>
+                {/* Form Section */}
+                <div className="max-w-md">
+                    <h2 className="text-4xl font-bold text-black mb-2">Login</h2>
+                    <h3 className="text-xl text-black font-medium mb-2">Welcome back</h3>
+                    <p className="text-gray-600 mb-8">
+                        Log in with your credentials to get instant access to our large
+                        book collection.
+                    </p>
 
-                {/* Form */}
-                <form onSubmit={handleSubmit} className="space-y-6 max-w-md">
-                    <div>
+                    <form onSubmit={handleSubmit} className="space-y-6">
                         <input
-                            id="email"
-                            name="email"
                             type="email"
-                            required
+                            name="email"
+                            placeholder="Enter your email"
                             value={formData.email}
                             onChange={handleChange}
-                            placeholder="Enter your email"
-                            className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#0A4312] focus:border-[#0A4312] outline-none"
+                            className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#0A4312] outline-none"
                         />
-                    </div>
-
-                    <div>
                         <input
-                            id="password"
-                            name="password"
                             type="password"
-                            required
+                            name="password"
+                            placeholder="Enter your password"
                             value={formData.password}
                             onChange={handleChange}
-                            placeholder="Enter your password"
-                            className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#0A4312] focus:border-[#0A4312] outline-none"
+                            className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#0A4312] outline-none"
                         />
-                    </div>
 
-                    <div className="flex items-center justify-between text-sm">
-                        <label className="flex items-center">
-                            <input
-                                id="rememberMe"
-                                name="rememberMe"
-                                type="checkbox"
-                                checked={formData.rememberMe}
-                                onChange={handleChange}
-                                className="h-4 w-4 text-[#0A4312] focus:ring-[#0A4312] border-gray-300 rounded"
-                            />
-                            <span className="ml-2 text-gray-700">Remember password</span>
-                        </label>
-                        <a href="#" className="text-[#0A4312] hover:underline">
-                            Forgot password
+                        <div className="flex items-center justify-between text-sm">
+                            <label className="flex items-center">
+                                <input
+                                    type="checkbox"
+                                    name="rememberMe"
+                                    checked={formData.rememberMe}
+                                    onChange={handleChange}
+                                    className="h-4 w-4 text-[#0A4312] border-gray-300 rounded"
+                                />
+                                <span className="ml-2 text-gray-700">Remember password</span>
+                            </label>
+                            <a href="#" className="text-[#0A4312] hover:underline">
+                                Forgot password
+                            </a>
+                        </div>
+
+                        <button
+                            type="submit"
+                            className="w-full py-3 bg-[#0A4312] text-white rounded-md font-medium hover:bg-green-900 transition"
+                        >
+                            Sign in
+                        </button>
+                    </form>
+
+                    <p className="text-sm text-gray-700 mt-10">
+                        Don’t have an account?{" "}
+                        <a href="/signup" className="text-[#0A4312] font-medium hover:underline">
+                            Sign up
                         </a>
-                    </div>
-
-                    <button
-                        type="submit"
-                        className="w-full py-3 bg-[#0A4312] text-white rounded-md font-medium hover:bg-green-900 transition"
-                    >
-                        Sign in
-                    </button>
-                </form>
-
-                {/* Sign up link */}
-                <p className="text-sm text-gray-700 mt-10">
-                    Don’t have an account?{" "}
-                    <a href="/signup" className="text-[#0A4312] font-medium hover:underline">
-                        Sign up
-                    </a>
-                </p>
+                    </p>
+                </div>
             </div>
 
             {/* Right Side */}
-            <div
-                className="w-1/2 h-full relative flex flex-col justify-center items-center bg-fixed bg-cover bg-center"
-                style={{
-                    backgroundImage: 'url("/loginbackground.jpg")',
-                }}
-            >
-                <div className="justify-center">
+            <div className="w-1/2 h-full relative flex flex-col justify-center items-center">
+                <Image
+                    src="/loginbackground.png"
+                    alt="Background"
+                    fill
+                    className="object-cover"
+                />
 
-                    <Image
-                        src="/frame.png"
-                        alt="Typing illustration"
-                        width={392}
-                        height={366}
-                        className="object-contain"
-                    />
-                </div>
+                <Image
+                    src="/frame.png"
+                    alt="Typing illustration"
+                    width={250}
+                    height={200}
+                    className="relative z-10"
+                />
 
-                {/* Bottom text */}
-                <div className="absolute bottom-10 left-10">
+                <div className="absolute bottom-10 left-10 z-10">
                     <p className="text-2xl text-[#0A4312] font-semibold">
-                        Your <span className="italic font-normal">Journey</span><br />
-                        <span className="text-2xl text-[#0A4312] font-semibold">begins here</span>
+                        Your <span className="italic font-normal">Journey</span>
+                        <br />
+                        <span className="text-2xl text-[#0A4312] font-semibold">
+                            begins here
+                        </span>
                     </p>
                 </div>
             </div>
