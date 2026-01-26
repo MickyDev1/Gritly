@@ -115,7 +115,7 @@ export default function Login() {
                     className="relative z-10"
                 />
 
-                <div className="absolute bottom-10 left-10 z-10">
+                <div className="absolute bottom-10 left-10 z-10 justify-left items-left">
                     <p className="text-2xl text-[#0A4312] font-semibold">
                         Your <span className="italic font-normal">Journey</span>
                         <br />
